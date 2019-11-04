@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <div id="elzero-app">
+    <h1>welcome to view js courses</h1>
+ <ul>
+     <li v-for="skill in skills" >
+{{skill}}
+     </li>
+ </ul>
+
+ <ul>
+     <li v-for="(test,index) in completedTests">
+       {{index}} - {{test.testName}} => {{test.testResult}}
+     </li>
+ </ul>
+
+ 
+ <ul>
+    <li v-for="(skill,index) in skills">
+        {{index}}
+    </li>
+</ul>
+</div>
+    <script src="js/vue.js"> </script>
+    <script>
+    var vm=new Vue({
+        el:'#elzero-app',
+        data:{
+            name:'ossema',
+            age:36,
+            skills:['HTML','CSS','JS'],
+            isSubscribed:false,
+            date:'Today',
+            completedTests:[
+                {
+                    testName:'First Test',
+                    testResult:'80%'
+                },
+                {
+                    testName:'Second Test',
+                    testResult:'55%'
+                },
+                {
+                    testName:'Third Test',
+                    testResult:'96%'
+                }
+            ]
+        },
+        methods: {
+            yourAgeInDays:function(){
+                return 'Your Age in days Is : '+this.age*365
+            },
+            showNewdate:function(){
+                this.date=Date();
+                
+            }
+        },
+    });
+    </script>
+</body>
+</html>
